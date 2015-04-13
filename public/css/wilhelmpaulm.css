@@ -1,0 +1,214 @@
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+@font-face {
+    font-family: 'suil';
+    src: url('../fonts/Roboto-Light.ttf');
+    src: url('../fonts/Roboto-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'qsb';
+    src: url('../fonts/Quicksand_Book.otf');
+    /*src: url('../font/Quicksand_Book.ttf') format('truetype');*/
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'osb';
+    src: url('../fonts/ostrich-black.ttf');
+    src: url('../fonts/ostrich-black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-size: x-large;
+}
+
+@font-face {
+    font-family: 'rl';
+    src: url('../fonts/Roboto-Regular.ttf');
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-size: x-large;
+}
+@font-face {
+    font-family: 'osr';
+    src: url('../font/ostrich-regular.ttf');
+    src: url('../font/ostrich-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    /*font-size: x-large;*/
+}
+
+.f-mono{
+    font-family: "Courier New", "Courier", "monospace";
+}
+.f-rob{
+    font-family: 'suil', "Segoe UI", "Arial";
+
+}
+
+.f-rl{
+    font-family: 'rl', "Segoe UI";
+
+}
+.f-osb{
+    font-family: 'osb', "Segoe UI", "Arial";
+    /*font-size: 20px;*/
+
+}
+.f-osr{
+    font-family: 'osr', "Segoe UI";
+    /*font-size: 20px;*/
+
+}
+.btn{
+    font-family: 'osb', "Segoe UI";
+    font-size: large;
+
+}
+
+root { 
+    display: block;
+}
+
+body{
+    /*min-width: 1300px; min-height: 800px;*/
+    /*font-family: "rl";*/
+    /*font-family: "Segoe UI";*/
+}
+
+
+.bg-turquoise{background-color: #1ABC9C  !important;}
+.bg-greensea{background-color: #16A085  !important;}
+.bg-peterriver{background-color: #3498DB !important;}
+.bg-belizehole{background-color: #2980B9  !important;}
+.bg-amethyst{background-color: #9B59B6 !important;}
+.bg-wisteria{background-color: #8E44AD !important;}
+.bg-sunflower{background-color: #F1C40F !important;}
+.bg-orange{background-color: #F39C12 !important;}
+.bg-carrot{background-color: #E67E22 !important;}
+.bg-pumpkin{background-color: #D35400 !important;}
+.bg-alizarin{background-color: #E74C3C !important;}
+.bg-pomegranate{background-color: #C0392B !important;}
+.bg-clouds{background-color: #ECF0F1 !important;}
+.bg-silver{background-color: #BDC3C7 !important;}
+.bg-emerald{background-color: #2ECC71 !important;}
+.bg-nephritis{background-color: #27AE60 !important;}
+
+.c-turquoise{color: #1ABC9C;}
+.c-greensea{color: #16A085;}
+.c-peterriver{color: #3498DB;}
+.c-belizehole{color: #2980B9;}
+.c-amethyst{color: #9B59B6;}
+.c-wisteria{color: #8E44AD}
+.c-sunflower{color: #F1C40F;}
+.c-orange{color: #F39C12;}
+.c-carrot{color: #E67E22;}
+.c-pumpkin{color: #D35400;}
+.c-alizarin{color: #E74C3C;}
+.c-pomegranate{color: #C0392B;}
+.c-clouds{color: #ECF0F1;}
+.c-silver{color: #BDC3C7;}
+.c-emerald{color: #2ECC71}
+.c-nephritis{color: #27AE60}
+
+.bg-brown{background-color: #632F00 !important;}
+.bg-gray{background-color: #696969 !important;}
+.bg-red{background-color: #E51400 !important;}
+.bg-darkred{background-color: #B81B1B !important;}
+.bg-orange{background-color: #FF7D23 !important;}
+.bg-green{background-color: #15992A !important;}
+.bg-lime{background-color: #8CBF26 !important;}
+.bg-lightblue{background-color: #1BA1E2 !important;}
+.bg-blue{background-color: #006AC1 !important;}
+.bg-teal{background-color: #00ABA9 !important;}
+.bg-pink{background-color: #FF76BC !important;}
+.bg-magenta{background-color: #AE113D !important;}
+.bg-purple{background-color: #7200AC !important;}
+.bg-black{background-color: #000 !important;}
+.bg-p1{background-color: #649203 !important;}
+.bg-p2{background-color: #8bb029 !important;}
+.bg-p3{background-color: #f8ffd8 !important;}
+.bg-p4{background-color: #e0daa8 !important;}
+.bg-p5{background-color: #c2bd91 !important;}
+.bg-p6{background-color: #1d4025 !important;}
+.bg-p7{background-color: #45734c !important;}
+.bg-p8{background-color: #528c37 !important;}
+.bg-p9{background-color: #9abf80 !important;}
+.bg-p10{background-color: #f2f0d0 !important;}
+.bg-s1{background-color: #012d3d !important;}
+.bg-s2{background-color: #38ad9e !important;}
+.bg-s3{background-color: #ffeb9e !important;}
+.bg-s4{background-color: #ff6867 !important;}
+.bg-s5{background-color: #f9fcfc !important;}
+/*.bg-s5{background-color: #f9fcfc;}*/
+.bg-whitesmoke{background-color: whitesmoke;}
+.bg-white{background-color: white;}
+
+.c-whitesmoke{color: whitesmoke;}
+.c-white{color: white;}
+.c-brown{color: #632F00;}
+.c-gray{color: #696969;}
+.c-red{color: #E51400;}
+.c-darkred{color: #B81B1B;}
+.c-orange{color: #FF7D23;}
+.c-green{color: #15992A;}
+.c-lime{color: #8CBF26;}
+.c-lightblue{color: #1BA1E2;}
+.c-blue{color: #006AC1;}
+.c-teal{color: #00ABA9;}
+.c-pink{color: #FF76BC;}
+.c-magenta{color: #AE113D;}
+.c-purple{color: #7200AC;}
+.c-black{color: #000;}
+.c-p1{color: #649203;}
+.c-p2{color: #8bb029;}
+.c-p3{color: #f8ffd8;}
+.c-p4{color: #e0daa8;}
+.c-p5{color: #c2bd91;}
+.c-p6{color: #1d4025;}
+.c-p7{color: #45734c;}
+.c-p8{color: #528c37;}
+.c-p9{color: #9abf80;}
+.c-p10{color: #f2f0d0;}
+.c-s1{color: #012d3d;}
+.c-s2{color: #38ad9e;}
+.c-s3{color: #ffeb9e;}
+.c-s4{color: #ff6867;}
+.c-s5{color: #f9fcfc;}
+
+.wid95{ width:  95%}
+
+
+.pad5{ padding: 5px}
+.pad10{ padding: 10px}
+.pad15{ padding: 15px}
+.pad20{ padding: 20px}
+.pad40{ padding: 40px}
+.pad60{ padding: 60px}
+
+.mar5{margin: 5px}
+.mar10{margin: 10px}
+.mar20{margin: 20px}
+.mar40{margin: 40px}
+.mar60{margin: 60px}
+
+.fs20{font-size: 20px}
+.fs30{font-size: 30px}
+.fs40{font-size: 40px}
+.fs50{font-size: 50px}
+.fs60{font-size: 60px}
+.fs70{font-size: 70px}
+.fs80{font-size: 80px}
+.fs90{font-size: 90px}
+.fs100{font-size: 100px}
+
+.a-white li {
+    
+    
+}

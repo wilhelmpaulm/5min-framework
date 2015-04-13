@@ -1,0 +1,322 @@
+--
+-- MySQL 5.6.15
+-- Tue, 17 Mar 2015 03:04:37 +0000
+--
+
+CREATE DATABASE `ching` DEFAULT CHARSET utf8;
+
+USE `ching`;
+
+CREATE TABLE `beds` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `room` varchar(45),
+   `bed` varchar(45),
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `beds` is empty]
+
+CREATE TABLE `document` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `id_patient` varchar(45),
+   `name` varchar(45),
+   `file` varchar(45),
+   `type` varchar(45),
+   `status` varchar(45),
+   `date_issued` varchar(45),
+   `date_paid` varchar(45),
+   `payment_code` varchar(45),
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `document` is empty]
+
+CREATE TABLE `document_request` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `id_patient` varchar(45),
+   `payment_code` varchar(45),
+   `type` varchar(45),
+   `status` varchar(45),
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `document_request` is empty]
+
+CREATE TABLE `forum_question` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `id_user` varchar(45),
+   `question` varchar(45),
+   `type` varchar(45),
+   `status` varchar(45),
+   `vote_up` varchar(45) default '0',
+   `vote_down` varchar(45) default '0',
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `forum_question` is empty]
+
+CREATE TABLE `forum_reply` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `id_user` varchar(45),
+   `id_question` varchar(45),
+   `reply` text,
+   `type` varchar(45),
+   `status` varchar(45),
+   `vote_up` varchar(45) default '0',
+   `vote_down` varchar(45) default '0',
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `forum_reply` is empty]
+
+CREATE TABLE `patient_abstracts` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `id_patient` varchar(45),
+   `date_admitted` varchar(45),
+   `date_discharged` varchar(45),
+   `brief_clinical_history` text,
+   `dispositions` text,
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `patient_abstracts` is empty]
+
+CREATE TABLE `patient_admitting_diagnosis` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `id_patient` varchar(45),
+   `id_patient_abstract` varchar(45),
+   `diagnosis` text,
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `patient_admitting_diagnosis` is empty]
+
+CREATE TABLE `patient_blood` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `id_patient` varchar(45),
+   `id_medtech` varchar(45),
+   `id_nurse` varchar(45),
+   `type_patient` text,
+   `type_donor` varchar(45),
+   `unit` varchar(45),
+   `isolation` varchar(45),
+   `date` varchar(45),
+   `time` varchar(45),
+   `packed_rbc` varchar(45),
+   `cryopt` varchar(45),
+   `proper_plasma` varchar(45),
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `patient_blood` is empty]
+
+CREATE TABLE `patient_chief_complaints` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `id_patient` varchar(45),
+   `id_patient_abstract` varchar(45),
+   `complaint` text,
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `patient_chief_complaints` is empty]
+
+CREATE TABLE `patient_demographics` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `id_patient` int(11),
+   `id_doctor` int(11),
+   `id_appointment` varchar(45),
+   `weight` varchar(45),
+   `height` varchar(45),
+   `pulse` varchar(45),
+   `respiration` varchar(45),
+   `systolic` varchar(45),
+   `diastolic` varchar(45),
+   `temperature` varchar(45),
+   `companion_name` varchar(45),
+   `companion_complaint` varchar(45),
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=3;
+
+INSERT INTO `patient_demographics` (`id`, `date_created`, `date_updated`, `id_patient`, `id_doctor`, `id_appointment`, `weight`, `height`, `pulse`, `respiration`, `systolic`, `diastolic`, `temperature`, `companion_name`, `companion_complaint`) VALUES 
+('1', '2015-03-17 10:48:32', '', '3', '', '', 'fgh', 'gfghfg', 'fgh', 'gfh', 'fgh', 'fghfgh', 'hfgh', 'gdfgdfgdfgdf', 'gdf'),
+('2', '2015-03-17 11:00:26', '', '2', '', '', 'gdfg', 'gdf', 'dfgd', 'dfgdfg', 'fgdf', 'dfgdfg', 'gdfg', 'fd', 'gfgdf');
+
+CREATE TABLE `patient_illness_histories` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `id_patient` varchar(45),
+   `illness` varchar(45),
+   `remarks` varchar(45),
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `patient_illness_histories` is empty]
+
+CREATE TABLE `patient_medication` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `id_patient_perscription` varchar(45),
+   `medication` varchar(45),
+   `frequency` varchar(45),
+   `dose` varchar(45),
+   `route` varchar(45),
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `patient_medication` is empty]
+
+CREATE TABLE `patient_perscription` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `id_patient` varchar(45),
+   `id_doctor` varchar(45),
+   `status` varchar(45),
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `patient_perscription` is empty]
+
+CREATE TABLE `patient_vitals` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `id_round` varchar(45),
+   `id_doctor` varchar(45),
+   `remarks` text,
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `patient_vitals` is empty]
+
+CREATE TABLE `patients` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `password` varchar(45),
+   `last_name` varchar(45),
+   `middle_name` varchar(45),
+   `first_name` varchar(45),
+   `birthday` date,
+   `gender` varchar(45),
+   `contact_number` varchar(45),
+   `email` varchar(45),
+   `username` varchar(45),
+   `occupation` varchar(45),
+   `religion` varchar(45),
+   `nationality` varchar(45),
+   `address` text,
+   `blood_type` varchar(45),
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=4;
+
+INSERT INTO `patients` (`id`, `date_created`, `date_updated`, `password`, `last_name`, `middle_name`, `first_name`, `birthday`, `gender`, `contact_number`, `email`, `username`, `occupation`, `religion`, `nationality`, `address`, `blood_type`) VALUES 
+('2', '2015-03-17 10:44:09', '', '', 'dfghdfghdf', 'dfghdfghdfghd', 'dgjh', '0000-00-00', 'male', '', 'dfghdf@asdfsd.fsdf', '', 'fghdf', '', '', 'ghdfgh', 'A+'),
+('3', '2015-03-17 10:48:32', '', '', 'dfgsdfgfs', 'dsfgs', 'fgsdfg', '0000-00-00', 'male', '', 'gsdfg@asdasd.as', '', 'gdfg', '', '', 'fgsdf', 'A+');
+
+CREATE TABLE `room_assignments` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `id_patient` varchar(45),
+   `id_doctor` varchar(45),
+   `id_nurse` varchar(45),
+   `id_fellow` varchar(45),
+   `id_room` varchar(45),
+   `id_bed` varchar(45),
+   `date_start` varchar(45),
+   `date_end` varchar(45),
+   `type` varchar(45),
+   `triange` varchar(45),
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `room_assignments` is empty]
+
+CREATE TABLE `rooms` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `room` varchar(45),
+   `ward` varchar(45),
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `rooms` is empty]
+
+CREATE TABLE `rounds` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `id_` varchar(45),
+   `id_doctor` varchar(45),
+   `id_room` varchar(45),
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `rounds` is empty]
+
+CREATE TABLE `templates` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `templates` is empty]
+
+CREATE TABLE `user_schedules` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `id_user` varchar(45),
+   `day` varchar(45),
+   `time_start` varchar(45),
+   `time_end` varchar(45),
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `user_schedules` is empty]
+
+CREATE TABLE `users` (
+   `id` int(11) not null auto_increment,
+   `date_created` timestamp default CURRENT_TIMESTAMP,
+   `date_updated` timestamp,
+   `password` varchar(45),
+   `last_name` varchar(45),
+   `first_name` varchar(45),
+   `birthday` date,
+   `gender` varchar(45),
+   `fb_id` text,
+   `fb_link` text,
+   `contact_number` varchar(45),
+   `email` varchar(45),
+   `username` varchar(45),
+   `secret_question` text,
+   `secret_answer` text,
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- [Table `users` is empty]
